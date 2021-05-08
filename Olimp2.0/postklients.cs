@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Olimp2._0
+namespace Hotel_Administration
 {
     public partial class postklients : Form
     {
@@ -35,8 +35,8 @@ namespace Olimp2._0
                 "WHERE DataDogovora >= '" + dateTimePicker1.Value.Date + "' AND DataDogovora <= '" + dateTimePicker2.Value.Date + "'" +
                 "GROUP BY Dogovor.IdKlienta, FamiliyaImyaOtchestvo, BonusnayaKarta " +
                 "HAVING COUNT(*) >= 3";
-            admin.Table_Fill("postklients", sql);
-            dataGridView1.DataSource = admin.ds.Tables["postklients"];
+            Connect.Table_Fill("postklients", sql);
+            dataGridView1.DataSource = Connect.Ds.Tables["postklients"];
             dataGridView1.Columns["IdKlienta"].Visible = false;
             dataGridView1.CurrentCell = null;
             dataGridView1.BorderStyle = BorderStyle.None;

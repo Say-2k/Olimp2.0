@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Olimp2._0
+namespace Hotel_Administration
 {
     public partial class migrants : Form
     {
@@ -26,8 +26,8 @@ namespace Olimp2._0
                 "INNER JOIN Pasport ON Klient.IdKlienta = Pasport.IdKlienta) " +
                 "INNER JOIN MigracionnayaKarta ON Klient.IdKlienta = MigracionnayaKarta.IdKlienta " +
                 "WHERE DataZaezda >= '" + dateTimePicker1.Value.Date + "' AND DataViezda <= '" + dateTimePicker2.Value.Date + "'";
-            admin.Table_Fill("InostrKli", sql);
-            dataGridView1.DataSource = admin.ds.Tables["InostrKli"];
+            Connect.Table_Fill("InostrKli", sql);
+            dataGridView1.DataSource = Connect.Ds.Tables["InostrKli"];
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ReadOnly = true;
             dataGridView1.CurrentCell = null;

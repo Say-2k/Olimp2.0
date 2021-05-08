@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Olimp2._0
+namespace Hotel_Administration
 {
     public partial class auth : Form
     {
@@ -19,24 +19,28 @@ namespace Olimp2._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "admin" && textBox2.Text == "admin")
+            Connect.Table_Fill("Users", "SELECT * FROM Users");
+            for (int i = 0; i < Connect.Ds.Tables["Users"].Rows.Count; i++)
             {
-                Hide();
-                admin admin = new admin();
-                admin.ShowDialog();
-                this.Close();
+                if ((textBox1.Text == Connect.Ds.Tables["Users"].Rows[i][1].ToString()) && (textBox2.Text == Connect.Ds.Tables["Users"].Rows[i][2].ToString()))
+                {
+                    if (Connect.Ds.Tables["Users"].Rows[i][3].ToString() == "Администратор")
+                    {
+                        Hide();
+                        admin admin = new admin();
+                        admin.ShowDialog();
+                        this.Close();
+                    }
+                    else if (Connect.Ds.Tables["Users"].Rows[i][3].ToString() == "Управляющий")
+                    {
+                        Hide();
+                        uprav uprav = new uprav();
+                        uprav.ShowDialog();
+                        this.Close();
+                    }
+                }
             }
-            else if (textBox1.Text == "manager" && textBox2.Text == "manager")
-            {
-                Hide();
-                uprav uprav = new uprav();
-                uprav.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Неверно введены логин или пароль!", "Ошибка");
-            }
+            MessageBox.Show("Неверно введены логин или пароль!", "Ошибка");
         }
 
         private void button2_Click(object sender, EventArgs e)

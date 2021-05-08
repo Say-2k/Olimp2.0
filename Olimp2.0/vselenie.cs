@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Olimp2._0
+namespace Hotel_Administration
 {
     public partial class vselenie : Form
     {
@@ -20,8 +20,8 @@ namespace Olimp2._0
         private void vselenie_Load(object sender, EventArgs e)
         {
             string sql = "SELECT IdKlienta, FamiliyaImyaOtchestvo AS [ФИО клиента], BonusnayaKarta AS [Вид бонусной карты] FROM Klient";
-            admin.Table_Fill("Klient", sql);
-            dataGridView1.DataSource = admin.ds.Tables["Klient"];
+            Connect.Table_Fill("Klient", sql);
+            dataGridView1.DataSource = Connect.Ds.Tables["Klient"];
             dataGridView1.Columns["IdKlienta"].Visible = false;
             dataGridView1.AutoResizeColumns();
             dataGridView1.AllowUserToAddRows = false;
@@ -34,8 +34,8 @@ namespace Olimp2._0
             ///
             sql = "SELECT NomerPomesheniya, Oboznachenie AS [Обозначение категории], Opisanie AS [Описание номера], CenaZaSutki AS [Цена за сутки], KolichestvoMest AS [Количество мест] " +
                 "FROM GostinichniyNomer INNER JOIN Kategoriya ON GostinichniyNomer.IdKategorii = Kategoriya.IdKategorii WHERE Status = 'свободен'";
-            admin.Table_Fill("Nomer", sql);
-            dataGridView2.DataSource = admin.ds.Tables["Nomer"];
+            Connect.Table_Fill("Nomer", sql);
+            dataGridView2.DataSource = Connect.Ds.Tables["Nomer"];
             dataGridView2.Columns["NomerPomesheniya"].Visible = false;
             dataGridView2.AutoResizeColumns();
             dataGridView2.AllowUserToAddRows = false;
@@ -47,13 +47,13 @@ namespace Olimp2._0
             dataGridView2.BorderStyle = BorderStyle.None;
             ///
             sql = "SELECT * FROM Dogovor";
-            admin.Table_Fill("Dogovor", sql);
+            Connect.Table_Fill("Dogovor", sql);
             ///
             sql = "SELECT * FROM Kategoriya";
-            admin.Table_Fill("Kategoriya", sql);
-            for (int i = 0; i < admin.ds.Tables["Kategoriya"].Rows.Count; i++)
+            Connect.Table_Fill("Kategoriya", sql);
+            for (int i = 0; i < Connect.Ds.Tables["Kategoriya"].Rows.Count; i++)
             {
-                comboBox1.Items.Add(admin.ds.Tables["Kategoriya"].Rows[i]["Oboznachenie"].ToString());
+                comboBox1.Items.Add(Connect.Ds.Tables["Kategoriya"].Rows[i]["Oboznachenie"].ToString());
             }
             ///
             button1.Enabled = false;
@@ -63,7 +63,7 @@ namespace Olimp2._0
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            admin.ds.Tables["Klient"].DefaultView.RowFilter = "[ФИО клиента] LIKE '" + textBox1.Text + "*'";
+            Connect.Ds.Tables["Klient"].DefaultView.RowFilter = "[ФИО клиента] LIKE '" + textBox1.Text + "*'";
         }
 
         private void found()
@@ -89,7 +89,7 @@ namespace Olimp2._0
             {
                 str += "[Количество мест] = " + numericUpDown1.Value;
             }
-            admin.ds.Tables["Nomer"].DefaultView.RowFilter = str;
+            Connect.Ds.Tables["Nomer"].DefaultView.RowFilter = str;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -181,19 +181,19 @@ namespace Olimp2._0
         private void button1_Click(object sender, EventArgs e)
         {
             int id = 0;
-            if (admin.ds.Tables["Dogovor"].Compute("MAX(NomerDogovora)", "").ToString() == "")
+            if (Connect.Ds.Tables["Dogovor"].Compute("MAX(NomerDogovora)", "").ToString() == "")
             {
                 id = 1;
             }
             else
             {
-                id = 1 + Convert.ToInt32(admin.ds.Tables["Dogovor"].Compute("MAX(NomerDogovora)", ""));
+                id = 1 + Convert.ToInt32(Connect.Ds.Tables["Dogovor"].Compute("MAX(NomerDogovora)", ""));
             }
             string sql = "INSERT INTO Dogovor VALUES (" + id + ", '" + DateTime.Now.Date + "', " + k + ", " + n + "," +
                 " '" + dateTimePicker1.Value.Date + "', '" + dateTimePicker2.Value.Date + "', " + sum.ToString().Replace(",",".") + ", '" + comboBox2.Text + "')";
-            admin.Modification_Execute(sql);
+            Connect.Modification_Execute(sql);
             sql = "UPDATE GostinichniyNomer SET Status = 'занят' WHERE NomerPomesheniya = " + n;
-            admin.Modification_Execute(sql);
+            Connect.Modification_Execute(sql);
             MessageBox.Show("Операция выполнена успешно!");
             this.OnLoad(e);
         }

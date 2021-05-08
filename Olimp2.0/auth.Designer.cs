@@ -1,5 +1,5 @@
 ﻿
-namespace Olimp2._0
+namespace Hotel_Administration
 {
     partial class auth
     {

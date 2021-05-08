@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimp2.0", "Olimp2.0\Olimp2.0.csproj", "{9F7B607D-BBBA-456F-9AA4-5F952E21561D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel Administration", "Olimp2.0\Hotel Administration.csproj", "{9F7B607D-BBBA-456F-9AA4-5F952E21561D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

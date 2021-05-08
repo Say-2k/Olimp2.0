@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Olimp2._0
+namespace Hotel_Administration
 {
     public partial class viselenie : Form
     {
@@ -23,8 +23,8 @@ namespace Olimp2._0
                 "FROM (Dogovor INNER JOIN Klient ON Dogovor.IdKlienta = Klient.IdKlienta) " +
                 "INNER JOIN GostinichniyNomer ON Dogovor.NomerPomesheniya = GostinichniyNomer.NomerPomesheniya " +
                 "WHERE DataViezda = '" + dateTimePicker1.Value.Date + "' AND Status = 'занят'";
-            admin.Table_Fill("Dogovor", sql);
-            dataGridView1.DataSource = admin.ds.Tables["Dogovor"];
+            Connect.Table_Fill("Dogovor", sql);
+            dataGridView1.DataSource = Connect.Ds.Tables["Dogovor"];
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
             dataGridView1.Columns[7].Visible = false;
@@ -61,14 +61,14 @@ namespace Olimp2._0
             if (dateTimePicker3.Value.Date == Convert.ToDateTime(dataGridView1[6, dataGridView1.CurrentRow.Index].Value))
             {
                 string sql = "UPDATE GostinichniyNomer SET Status = 'свободен' WHERE NomerPomesheniya = " + textBox2.Text;
-                admin.Modification_Execute(sql);
+                Connect.Modification_Execute(sql);
                 MessageBox.Show("Клиент выселился");
                 this.OnLoad(e);
             }
             else
             {
                 string sql = "UPDATE Dogovor SET DataViezda = '" + dateTimePicker3.Value.Date + "' WHERE NomerDogovora = " + textBox1.Text;
-                admin.Modification_Execute(sql);
+                Connect.Modification_Execute(sql);
                 int span = dateTimePicker3.Value.Subtract(dateTimePicker2.Value.Date).Days;
                 double procent = 0;
                 if (dataGridView1[1, dataGridView1.CurrentRow.Index].Value.ToString() == "платиновая")
@@ -89,7 +89,7 @@ namespace Olimp2._0
                 }
                 double plus = span * procent * Convert.ToDouble(dataGridView1[0, dataGridView1.CurrentRow.Index].Value);
                 sql = "UPDATE Dogovor SET SummaOplati = " + plus + " WHERE NomerDogovora = " + textBox1.Text;
-                admin.Modification_Execute(sql);
+                Connect.Modification_Execute(sql);
                 MessageBox.Show("Дата выезда клиента успешно перенесена");
                 this.OnLoad(e);
             }

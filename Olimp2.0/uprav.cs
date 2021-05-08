@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Olimp2._0
+namespace Hotel_Administration
 {
     public partial class uprav : Form
     {
