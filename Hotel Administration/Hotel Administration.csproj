@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9F7B607D-BBBA-456F-9AA4-5F952E21561D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Olimp2._0</RootNamespace>
-    <AssemblyName>Olimp2.0</AssemblyName>
+    <RootNamespace>Hotel_Administration</RootNamespace>
+    <AssemblyName>Hotel_Administration</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -56,6 +56,12 @@
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Connect.cs" />
+    <Compile Include="passwordManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="passwordManager.Designer.cs">
+      <DependentUpon>passwordManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="migrants.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <EmbeddedResource Include="migrants.resx">
       <DependentUpon>migrants.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="passwordManager.resx">
+      <DependentUpon>passwordManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="postklients.resx">
       <DependentUpon>postklients.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="uprav.resx">
       <DependentUpon>uprav.cs</DependentUpon>

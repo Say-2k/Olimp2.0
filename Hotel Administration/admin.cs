@@ -29,5 +29,11 @@ namespace Hotel_Administration
             vselenie vselenie = new vselenie();
             vselenie.Show();
         }
+
+        private void менеджерПаролейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            passwordManager password = new passwordManager();
+            password.Show();
+        }
     }
 }

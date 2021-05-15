@@ -32,6 +32,7 @@ namespace Hotel_Administration
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.регистрацияКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вселениеКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.менеджерПаролейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,10 +40,11 @@ namespace Hotel_Administration
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.регистрацияКлиентаToolStripMenuItem,
-            this.вселениеКлиентаToolStripMenuItem});
+            this.вселениеКлиентаToolStripMenuItem,
+            this.менеджерПаролейToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(300, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(396, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,11 +62,18 @@ namespace Hotel_Administration
             this.вселениеКлиентаToolStripMenuItem.Text = "Вселение клиента";
             this.вселениеКлиентаToolStripMenuItem.Click += new System.EventHandler(this.вселениеКлиентаToolStripMenuItem_Click);
             // 
+            // менеджерПаролейToolStripMenuItem
+            // 
+            this.менеджерПаролейToolStripMenuItem.Name = "менеджерПаролейToolStripMenuItem";
+            this.менеджерПаролейToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
+            this.менеджерПаролейToolStripMenuItem.Text = "Менеджер паролей";
+            this.менеджерПаролейToolStripMenuItem.Click += new System.EventHandler(this.менеджерПаролейToolStripMenuItem_Click);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 122);
+            this.ClientSize = new System.Drawing.Size(396, 122);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "admin";
@@ -81,5 +90,6 @@ namespace Hotel_Administration
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem регистрацияКлиентаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вселениеКлиентаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem менеджерПаролейToolStripMenuItem;
     }
 }
