@@ -32,7 +32,7 @@ namespace Hotel_Administration
             if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && maskedTextBox1.Text != "" && maskedTextBox2.Text != "")
             {
                 int id = Convert.ToInt32(Connect.Ds.Tables["Klient"].Compute("MAX(IdKlienta)", "")) + 1;
-                string sql = "INSERT INTO Klient VALUES (" + id + ", '" + textBox1.Text + "', '" + comboBox1.Text + "', '" + dateTimePicker1.Value.Date + "', '" + comboBox3.Text + "')";
+                string sql = "INSERT INTO Klient VALUES (" + id + ", '" + textBox1.Text + "', '" + textBox8.Text + "', '" + textBox9.Text + "', '" + comboBox1.Text + "', '" + dateTimePicker1.Value.Date + "', '" + comboBox3.Text + "')";
                 Connect.Modification_Execute(sql);
                 sql = "INSERT INTO Pasport VALUES (" + id + ", '" + maskedTextBox1.Text + "', '" + maskedTextBox2.Text + "', '" + comboBox2.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "')";
                 Connect.Modification_Execute(sql);

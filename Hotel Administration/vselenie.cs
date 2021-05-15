@@ -19,7 +19,7 @@ namespace Hotel_Administration
 
         private void vselenie_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT IdKlienta, FamiliyaImyaOtchestvo AS [ФИО клиента], BonusnayaKarta AS [Вид бонусной карты] FROM Klient";
+            string sql = "SELECT IdKlienta, CONCAT(Familiya, ' ', Imya, ' ', Otchestvo) AS [ФИО клиента], BonusnayaKarta AS [Вид бонусной карты] FROM Klient";
             Connect.Table_Fill("Klient", sql);
             dataGridView1.DataSource = Connect.Ds.Tables["Klient"];
             dataGridView1.Columns["IdKlienta"].Visible = false;
@@ -192,9 +192,13 @@ namespace Hotel_Administration
             string sql = "INSERT INTO Dogovor VALUES (" + id + ", '" + DateTime.Now.Date + "', " + k + ", " + n + "," +
                 " '" + dateTimePicker1.Value.Date + "', '" + dateTimePicker2.Value.Date + "', " + sum.ToString().Replace(",",".") + ", '" + comboBox2.Text + "')";
             Connect.Modification_Execute(sql);
-            sql = "UPDATE GostinichniyNomer SET Status = 'занят' WHERE NomerPomesheniya = " + n;
+            sql = "UPDATE GostinichniyNomer SET Status = 'занят', IdKlienta = " + k + " WHERE NomerPomesheniya = " + n;
             Connect.Modification_Execute(sql);
             MessageBox.Show("Операция выполнена успешно!");
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            comboBox2.Text = "";
             this.OnLoad(e);
         }
     }

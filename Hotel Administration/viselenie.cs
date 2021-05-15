@@ -19,10 +19,10 @@ namespace Hotel_Administration
 
         private void viselenie_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT GostinichniyNomer.CenaZaSutki, Klient.BonusnayaKarta, NomerDogovora AS [Номер договора], Dogovor.NomerPomesheniya AS [Номер помещения], FamiliyaImyaOtchestvo AS [ФИО клиента], DataZaezda AS [Дата заезда], DataViezda AS [Дата выезда], Dogovor.SummaOplati " +
+            string sql = "SELECT GostinichniyNomer.CenaZaSutki, Klient.BonusnayaKarta, NomerDogovora AS [Номер договора], Dogovor.NomerPomesheniya AS [Номер помещения], CONCAT(Familiya, ' ', Imya, ' ', Otchestvo) AS [ФИО клиента], DataZaezda AS [Дата заезда], DataViezda AS [Дата выезда], Dogovor.SummaOplati " +
                 "FROM (Dogovor INNER JOIN Klient ON Dogovor.IdKlienta = Klient.IdKlienta) " +
                 "INNER JOIN GostinichniyNomer ON Dogovor.NomerPomesheniya = GostinichniyNomer.NomerPomesheniya " +
-                "WHERE DataViezda = '" + dateTimePicker1.Value.Date + "' AND Status = 'занят'";
+                "WHERE DataViezda = '" + dateTimePicker1.Value.Date + "' AND Status = 'занят' AND Dogovor.IdKlienta = GostinichniyNomer.IdKlienta";
             Connect.Table_Fill("Dogovor", sql);
             dataGridView1.DataSource = Connect.Ds.Tables["Dogovor"];
             dataGridView1.Columns[0].Visible = false;
@@ -60,7 +60,7 @@ namespace Hotel_Administration
         {
             if (dateTimePicker3.Value.Date == Convert.ToDateTime(dataGridView1[6, dataGridView1.CurrentRow.Index].Value))
             {
-                string sql = "UPDATE GostinichniyNomer SET Status = 'свободен' WHERE NomerPomesheniya = " + textBox2.Text;
+                string sql = "UPDATE GostinichniyNomer SET Status = 'свободен', IdKlienta = null WHERE NomerPomesheniya = " + textBox2.Text;
                 Connect.Modification_Execute(sql);
                 MessageBox.Show("Клиент выселился");
                 this.OnLoad(e);

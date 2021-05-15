@@ -30,10 +30,10 @@ namespace Hotel_Administration
 
         private void postklients_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT Dogovor.IdKlienta, FamiliyaImyaOtchestvo AS [ФИО клиента], BonusnayaKarta AS [Вид бонусной карты], COUNT(*) AS [Количество договоров за указанный период], SUM(SummaOplati) AS [Общая сумма оплаты] " +
+            string sql = "SELECT Dogovor.IdKlienta, CONCAT(Familiya, ' ', Imya, ' ', Otchestvo) AS [ФИО клиента], BonusnayaKarta AS [Вид бонусной карты], COUNT(*) AS [Количество договоров за указанный период], SUM(SummaOplati) AS [Общая сумма оплаты] " +
                 "FROM Dogovor INNER JOIN Klient ON Dogovor.IdKlienta = Klient.IdKlienta " +
                 "WHERE DataDogovora >= '" + dateTimePicker1.Value.Date + "' AND DataDogovora <= '" + dateTimePicker2.Value.Date + "'" +
-                "GROUP BY Dogovor.IdKlienta, FamiliyaImyaOtchestvo, BonusnayaKarta " +
+                "GROUP BY Dogovor.IdKlienta, Familiya, Imya, Otchestvo, BonusnayaKarta " +
                 "HAVING COUNT(*) >= 3";
             Connect.Table_Fill("postklients", sql);
             dataGridView1.DataSource = Connect.Ds.Tables["postklients"];

@@ -62,6 +62,10 @@ namespace Hotel_Administration
             this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +76,7 @@ namespace Hotel_Administration
             this.comboBox1.Items.AddRange(new object[] {
             "М",
             "Ж"});
-            this.comboBox1.Location = new System.Drawing.Point(104, 38);
+            this.comboBox1.Location = new System.Drawing.Point(104, 90);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(52, 21);
             this.comboBox1.TabIndex = 0;
@@ -80,7 +84,7 @@ namespace Hotel_Administration
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(71, 41);
+            this.label1.Location = new System.Drawing.Point(71, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 1;
@@ -89,22 +93,22 @@ namespace Hotel_Administration
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 15);
+            this.label2.Location = new System.Drawing.Point(42, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "ФИО клиента";
+            this.label2.Text = "Фамилия";
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(104, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 20);
+            this.textBox1.Size = new System.Drawing.Size(169, 20);
             this.textBox1.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(104, 65);
+            this.dateTimePicker1.Location = new System.Drawing.Point(104, 117);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(139, 20);
             this.dateTimePicker1.TabIndex = 4;
@@ -112,7 +116,7 @@ namespace Hotel_Administration
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 70);
+            this.label3.Location = new System.Drawing.Point(12, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 5;
@@ -132,7 +136,7 @@ namespace Hotel_Administration
             this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(12, 120);
+            this.groupBox1.Location = new System.Drawing.Point(12, 172);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(398, 185);
             this.groupBox1.TabIndex = 6;
@@ -256,7 +260,7 @@ namespace Hotel_Administration
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(12, 311);
+            this.groupBox2.Location = new System.Drawing.Point(12, 363);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(397, 157);
             this.groupBox2.TabIndex = 7;
@@ -345,7 +349,7 @@ namespace Hotel_Administration
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 475);
+            this.button1.Location = new System.Drawing.Point(14, 527);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -356,7 +360,7 @@ namespace Hotel_Administration
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(11, 94);
+            this.label15.Location = new System.Drawing.Point(11, 146);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(87, 13);
             this.label15.TabIndex = 10;
@@ -370,16 +374,52 @@ namespace Hotel_Administration
             "золотая",
             "обычная",
             "нет"});
-            this.comboBox3.Location = new System.Drawing.Point(104, 91);
+            this.comboBox3.Location = new System.Drawing.Point(104, 143);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(124, 21);
             this.comboBox3.TabIndex = 9;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(104, 38);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(111, 20);
+            this.textBox8.TabIndex = 12;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(69, 41);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Имя";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(104, 64);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(211, 20);
+            this.textBox9.TabIndex = 14;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(44, 67);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(54, 13);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "Отчество";
             // 
             // reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 511);
+            this.ClientSize = new System.Drawing.Size(431, 562);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.button1);
@@ -438,5 +478,9 @@ namespace Hotel_Administration
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label17;
     }
 }

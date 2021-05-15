@@ -20,7 +20,7 @@ namespace Hotel_Administration
 
         private void migrants_Load(object sender, EventArgs e)
         {
-            string sql = "SELECT FamiliyaImyaOtchestvo AS [ФИО клиента], CONCAT(Seriya, ', ', Nomer, ', ', VidDokumenta, ', ', Vidan, ', ', StranaVidachi) AS [Паспортные данные], " +
+            string sql = "SELECT CONCAT(Familiya, ' ', Imya, ' ', Otchestvo) AS [ФИО клиента], CONCAT(Seriya, ', ', Nomer, ', ', VidDokumenta, ', ', Vidan, ', ', StranaVidachi) AS [Паспортные данные], " +
                 "CONCAT(NomerKarti, ', ', Otkuda, ', ', PrebivanieS, ', ', PrebivaniePo, ', ', CelPoezdki) AS [Данные миграционной карты] " +
                 "FROM ((Klient INNER JOIN Dogovor ON Klient.IdKlienta = Dogovor.IdKlienta) " +
                 "INNER JOIN Pasport ON Klient.IdKlienta = Pasport.IdKlienta) " +
