@@ -38,7 +38,6 @@ namespace Hotel_Administration
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -66,6 +65,14 @@ namespace Hotel_Administration
             this.label16 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -124,9 +131,16 @@ namespace Hotel_Administration
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -138,14 +152,14 @@ namespace Hotel_Administration
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(12, 172);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 185);
+            this.groupBox1.Size = new System.Drawing.Size(398, 239);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Паспортные данные";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 159);
+            this.textBox4.Location = new System.Drawing.Point(116, 204);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(251, 20);
             this.textBox4.TabIndex = 18;
@@ -156,25 +170,17 @@ namespace Hotel_Administration
             this.comboBox2.Items.AddRange(new object[] {
             "Паспорт РФ",
             "Иностранный паспорт"});
-            this.comboBox2.Location = new System.Drawing.Point(116, 132);
+            this.comboBox2.Location = new System.Drawing.Point(116, 177);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(166, 21);
             this.comboBox2.TabIndex = 17;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             this.comboBox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.comboBox2_KeyUp);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(116, 71);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(251, 55);
-            this.textBox3.TabIndex = 16;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 162);
+            this.label9.Location = new System.Drawing.Point(27, 207);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 13);
             this.label9.TabIndex = 15;
@@ -183,7 +189,7 @@ namespace Hotel_Administration
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 135);
+            this.label8.Location = new System.Drawing.Point(27, 180);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 14;
@@ -194,9 +200,9 @@ namespace Hotel_Administration
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(6, 74);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 13);
+            this.label7.Size = new System.Drawing.Size(236, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Адрес по прописке";
+            this.label7.Text = "Адрес по прописке (только для граждан РФ)";
             // 
             // label6
             // 
@@ -260,7 +266,7 @@ namespace Hotel_Administration
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(12, 363);
+            this.groupBox2.Location = new System.Drawing.Point(13, 417);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(397, 157);
             this.groupBox2.TabIndex = 7;
@@ -349,7 +355,7 @@ namespace Hotel_Administration
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 527);
+            this.button1.Location = new System.Drawing.Point(15, 581);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -411,11 +417,75 @@ namespace Hotel_Administration
             this.label17.TabIndex = 13;
             this.label17.Text = "Отчество";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(232, 151);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(61, 20);
+            this.textBox3.TabIndex = 19;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(116, 98);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(126, 20);
+            this.textBox10.TabIndex = 20;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(116, 124);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(188, 20);
+            this.textBox11.TabIndex = 21;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(116, 151);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(60, 20);
+            this.textBox12.TabIndex = 22;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(73, 101);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.TabIndex = 23;
+            this.label18.Text = "Город";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(71, 127);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(39, 13);
+            this.label19.TabIndex = 24;
+            this.label19.Text = "Улица";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(80, 154);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(30, 13);
+            this.label20.TabIndex = 25;
+            this.label20.Text = "Дом";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(182, 154);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 13);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "кв/ком";
+            // 
             // reg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 562);
+            this.ClientSize = new System.Drawing.Size(431, 616);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox8);
@@ -454,7 +524,6 @@ namespace Hotel_Administration
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -482,5 +551,13 @@ namespace Hotel_Administration
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
